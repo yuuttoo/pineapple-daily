@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css?family=DM+Serif+Display|Merriweather&display=swap");
+
+
+
+.main-content-wrapper {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 25px;
+  grid-template-areas:
+    "main-articles "
+    "sub-articles";
+}
+
+a {
+  text-decoration: none;
+}
+/* Header --- */
+
+header {
+  display: grid;
+  grid-template-areas:
+    "date"
+    "title"
+    "weather";
+}
+
+h1 {
+  font-family: "DM Serif Display", serif;
+  margin: 0;
+}
+
+.header {
+  background-color:  #ffff80;
+}
+
+
+.main-title {
+  grid-area: title;
+  width: 100%;
+  height: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+.weather-widget {
+  grid-area: weather;
+}
+
+.date-counter {
+  grid: date;
+}
+
+.weather-widget-container p,
+.date-container p {
+  text-transform: capitalize;
+  font-size: 0.75em;
+  margin: 0;
+  text-align: center;
+  margin: 1em 0;
+}
+
+.weather-widget-container {
+  margin-bottom: 1.5em;
+}
+
+/* Articles---- */
+.loading-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  width: 70vw;
+}
+/* main-articles --------------- */
+
+.main-articles {
+  grid-area: main-articles;
+}
+
+.main-article-container {
+  border-bottom: 1px solid black;
+}
+
+.main-article-container:first-child {
+  margin-top: -1.25em;
+}
+
+.main-article-container a {
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+.main-article-img {
+  width: 100%;
+}
+
+/* sub-articles --------------- */
+
+.sub-articles {
+  display: flex;
+  flex-direction: column;
+  grid-area: sub-articles;
+}
+.sub-article-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0em 1em;
+}
+
+.sub-article-container h3 {
+  margin-bottom: 0em;
+}
+
+/* side-articles --------------- */
+.side-articles {
+  display: none;
+  grid-area: side-articles;
+}
+
+.side-article-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1em 0;
+  border-top: 1px solid black;
+}
+
+.side-article-container:first-child {
+  border-top: none;
+  margin-top: -1.25em;
+}
+
+.side-article-img {
+  width: 100%;
+}
+
+/* Footer-----*/
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffff66;
+  height: 50px;
+  margin-top: 3em;
+  padding: 0 0.5em;
+}
+
+footer h4,
+footer p,
+footer a {
+  margin: 0;
+}
+
+footer p {
+  display: none;
+}
+
+footer h4 {
+  display: none;
+  font-family: "DM Serif Display", serif;
+  margin-right: 1em;
+}
+
+footer a {
+  font-size: 0.75em;
+  color: black;
+}
+
+/* Media Queries -- */
+
+@media (min-width: 350px) {
+  footer {
+    justify-content: space-between;
+  }
+  footer p,
+  footer h4 {
+    display: block;
+  }
+}
+
+@media (min-width: 640px) {
+  .sub-articles {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-content-wrapper {
+    grid-template-areas:
+      "main-articles main-articles main-articles side-articles"
+      "sub-articles sub-articles sub-articles sub-articles";
+  }
+
+  .main-articles {
+    padding-right: 25px;
+    border-right: 1px solid black;
+  }
+
+  .main-article-container:last-child {
+    border-bottom: none;
+  }
+
+  .sub-articles {
+    border-top: 1px solid black;
+  }
+
+  .side-articles {
+    display: block;
+  }
+}
+
+@media (min-width: 1400px) {
+  h1 {
+    font-size: 2.75em;
+  }
+
+  .main-content-wrapper {
+    width: 70%;
+  }
+}
